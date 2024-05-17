@@ -18,7 +18,7 @@ public class MovieRecommenderSystemApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext appContext = SpringApplication.run(MovieRecommenderSystemApplication.class, args);
-		RecommenderImplementation2 recommender2 = appContext.getBean(RecommenderImplementation2.class);
+		RecommenderImplementation recommender2 = new RecommenderImplementation(new CollaborativeFilter());
 		String[] result = recommender2.recommendMovies("Finding Dory");
 		System.out.println(Arrays.toString(result));
 	}
