@@ -38,7 +38,24 @@ RecommenderImplementation recommender = new RecommenderImplmentation(new Content
 ```
 can be injected with lose coupling, thanks to dependency inversion.
 
+### 2. With Beans
 
+A Bean is annoted by the ```@Compenent``` annotation. A Bean is connected to another Bean via the ```@Autowired``` annotation. In this chain, there can only 2 Beans between the wiring (there are many forms of configuration).
+
+```Parent Class``` <=== ```Interface``` ==```Abstracted Child Class```
+
+```@Component``` <===```@Autowired```== ```@Component```
+
+#### Configuration forms
+1. If there are many abstracted child classes (Beans with the ```@Component``` annotation), the ```@Primary``` annotation will priorotise one of them
+2. Autowiring by name
+3. Giving the ```@Qualifier``` annotation to the ```@Autowired``` parent Bean like the example above
+
+If many Beans 
+
+
+
+We can invert dependency without a constructor of the super class like so.
 
 ## Spring Boot
 
