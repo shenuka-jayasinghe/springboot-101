@@ -46,10 +46,13 @@ A Bean is annoted by the ```@Compenent``` annotation. A Bean is connected to ano
 
 ```@Component``` <===```@Autowired```== ```@Component```
 
+
+
 #### Configuration forms
 1. If there are many abstracted child classes (Beans with the ```@Component``` annotation), the ```@Primary``` annotation will priorotise one of them
 2. Autowiring by name
 3. Giving the ```@Qualifier``` annotation to the ```@Autowired``` parent Bean like the example above
+![dependency-injections2](https://github.com/shenuka-jayasinghe/springboot-101/assets/137282472/24a3dafb-7330-4dd1-ad1f-581b4be32c92)
 
 If many Beans 
 
