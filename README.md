@@ -54,11 +54,29 @@ A Bean is annoted by the ```@Compenent``` annotation. A Bean is connected to ano
 3. Giving the ```@Qualifier``` annotation to the ```@Autowired``` parent Bean like the example above
 ![dependency-injections2](https://github.com/shenuka-jayasinghe/springboot-101/assets/137282472/24a3dafb-7330-4dd1-ad1f-581b4be32c92)
 
-If many Beans 
+4. Beans have default names. You can set a name to a Bean through the ```@Qualifier``` annotation, or use its default name, which is the same name as of the child class, but in ```camelCase```.
+
+#### Constructor Injection
+
+5. We can go back to using injecting the dependency through the consructor, but here it would be in the layer of our parent class.
+
+#### Setter Injection
+
+6. Or, we can use the _setter_ injection.
+
+```Java
+public class RecommenderImplementation2 {
+
+	private Filter filter;
+	
+    public void setFilter(Filter filter) {
+        this.filter = filter;
+        System.out.println("Setter method invoked..");
+    }
+}
+```
 
 
-
-We can invert dependency without a constructor of the super class like so.
 
 ## Spring Boot
 

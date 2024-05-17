@@ -11,10 +11,8 @@ public class RecommenderImplementation {
     private Filter filter;
 
 
-//    @Autowired
-//    use of @Autowired is optional with Constructor Dependency Injection
+    @Autowired
     public RecommenderImplementation(@Qualifier("collaborativeFilter") Filter filter) {
-        super();
         this.filter = filter;
         System.out.println("Constructor invoked...");
     }
