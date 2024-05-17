@@ -59,10 +59,12 @@ A Bean is annoted by the ```@Compenent``` annotation. A Bean is connected to ano
 #### Constructor Injection
 
 5. We can go back to using injecting the dependency through the consructor, but here it would be in the layer of our parent class.
+![Screenshot from 2024-05-17 23-30-12](https://github.com/shenuka-jayasinghe/springboot-101/assets/137282472/1d0ef068-a9bf-46bb-9818-3d66394e584a)
 
 #### Setter Injection
 
 6. Or, we can use the _setter_ injection.
+
 
 ```Java
 public class RecommenderImplementation2 {
@@ -75,11 +77,11 @@ public class RecommenderImplementation2 {
     }
 }
 ```
-
+### Summary
+![5609253142921216](https://github.com/shenuka-jayasinghe/springboot-101/assets/137282472/f0933824-0ad1-4109-a0e0-11f82b86a65c)
 
 
 ## Spring Boot
-
 
 
 ### 1. Initialize Spring boot
