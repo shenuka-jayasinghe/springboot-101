@@ -16,6 +16,7 @@ Any class that ```inherits``` methods from another class, is tightly copuled to 
 Without Beans, a dependency can simply be inverted by instead of ```inheriting``` a class, we can abastract the contracts of the class with another using an interface. Then the super class can inject any child it wants without being tightly coupled to it.
 
 for example;
+![dependency-injections drawio](https://github.com/shenuka-jayasinghe/springboot-101/assets/137282472/8566600f-1898-4f58-b861-624540b73503)
 
 This can be implemented by running 
 ```java
