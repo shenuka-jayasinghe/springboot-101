@@ -103,7 +103,7 @@ You can work around this, by adding a proxy, which lets us achieve the desired e
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)
 ```
 
-
+![proxy](https://github.com/shenuka-jayasinghe/springboot-101/assets/137282472/f99416b0-7c57-47ab-b683-93b81debb2a0)
 
 
 
