@@ -81,6 +81,32 @@ public class RecommenderImplementation2 {
 ![5609253142921216](https://github.com/shenuka-jayasinghe/springboot-101/assets/137282472/f0933824-0ad1-4109-a0e0-11f82b86a65c)
 
 
+## Mixing Bean Scope
+
+When a bean is annotated via the ```@Component``` annotation it is a ```Singleton``` Bean (different term to the Gang of Four 'Singleton'). Which means you cannot create a new instance of it since any copy will be in the same allocated memory (Similar to a shallow copy of an object in JS). You can change this scope by making it a ```Prototype``` which makes makes a different reference in memory (similar to a deep copy of an object in JS). You can do this by giving the following annotations:
+```Java
+@Component
+@Scope(value = "prototype")
+```
+or
+```Java
+@Component
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE,
+```
+In Spring, by default, when a ```Singleton``` is Autowired to a ```Prototype```, the Prototype will act as a Singelton.
+
+![coupled-protoype](https://github.com/shenuka-jayasinghe/springboot-101/assets/137282472/4db47dae-9d1c-4d32-81e9-80b3084ae83c)
+
+You can work around this, by adding a proxy, which lets us achieve the desired effect. Proxy definitions are added to the @Scope annotations like so;
+```Java
+@Component
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)
+```
+
+
+
+
+
 ## Spring Boot
 
 
