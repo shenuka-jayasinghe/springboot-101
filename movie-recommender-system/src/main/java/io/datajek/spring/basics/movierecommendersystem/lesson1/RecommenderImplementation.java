@@ -1,5 +1,7 @@
 package io.datajek.spring.basics.movierecommendersystem.lesson1;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -10,11 +12,12 @@ public class RecommenderImplementation {
     //constructor injection
     private Filter filter;
 
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     public RecommenderImplementation(@Qualifier("collaborativeFilter") Filter filter) {
+        logger.info("In Recommender Implmentation setter method.. dependency injection")
         this.filter = filter;
-        System.out.println("Constructor invoked...");
     }
 
     public String[] recommendMovies (String movie){
