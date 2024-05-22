@@ -1,36 +1,37 @@
 package io.datajek.spring.basics.movierecommendersystem.lesson1;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("CBF")
-public class ContentBasedFilter implements Filter {
-    private static int instances = 0;
+public class ContentBasedFilter implements Filter{
 
-    @Autowired
-    private Movie movie;
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    //constructor
-    public ContentBasedFilter(){
-        instances++;
-        System.out.println("ContentBased Filter constructor called");
-        System.out.println("CBF instances ==> " + instances);
+    public ContentBasedFilter() {
+        super();
+        logger.info("In ContentBasedFilter constructor method");
     }
 
-    public Movie getMovie(){
-        return movie;
+    @PostConstruct
+    private void postConstruct() {
+        //load movies into cache
+        logger.info("In ContentBasedFilter postConstruct method");
+    }
+    @PreDestroy
+    private void preDestroy() {
+        //clear movies from cache
+        logger.info("In ContentBasedFilter preDestroy method");
     }
 
-    public static int getInstances(){
-        return ContentBasedFilter.instances;
-    }
+    //getRecommendations takes a movie as input and returns a list of similar movies
+    public String[] getRecommendations(String movie) {
 
-    public String[] getRecommendations(String movie){
-        //logic of content based filter
+        //calculate similarity between movies
+
+        //return movie recommendations
         return new String[] {"Happy Feet", "Ice Age", "Shark Tale"};
     }
 }

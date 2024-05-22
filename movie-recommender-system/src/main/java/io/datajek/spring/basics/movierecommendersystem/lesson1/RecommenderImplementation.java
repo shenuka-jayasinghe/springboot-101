@@ -1,5 +1,6 @@
 package io.datajek.spring.basics.movierecommendersystem.lesson1;
 
+import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,13 @@ public class RecommenderImplementation {
 
     @Autowired
     public RecommenderImplementation(@Qualifier("collaborativeFilter") Filter filter) {
-        logger.info("In Recommender Implmentation setter method.. dependency injection")
+        logger.info("In Recommender Implementation setter method.. dependency injection");
         this.filter = filter;
+    }
+
+    @PostConstruct
+    public void postConstruct(){ //method can have any name
+        logger.info("In Recommender Implementation post construct method");
     }
 
     public String[] recommendMovies (String movie){
