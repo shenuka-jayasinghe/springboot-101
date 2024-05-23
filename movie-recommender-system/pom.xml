@@ -7,7 +7,7 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
+	</parent>cd
 	<groupId>io.datajek.spring.basics</groupId>
 	<artifactId>movie-recommender-system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
